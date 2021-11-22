@@ -22,7 +22,7 @@
         setTimeout(function(){p.innerHTML = '1';},4000);
         if(newtab == 'true'){
           setTimeout(function(){window.open(to);},5000);
-          setTimeout(function(){history.back();},5100);
+          setTimeout(function(){window.location.replace(from);},6000);
         } else {
           setTimeout(function(){window.location.replace(to);},5000);
         }
