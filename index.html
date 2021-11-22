@@ -8,6 +8,7 @@
         const urlParams = new URLSearchParams(queryString);
         const to = urlParams.get('to');
         const from = urlParams.get('from');
+        const newtab = urlParams.get('newtab');
         window.document.title = window.document.title.replace('\'\'','\'' + to + '\'');
         var h1 = document.getElementById('h1');
         var p = document.getElementById('p');
@@ -19,7 +20,11 @@
         setTimeout(function(){p.innerHTML = '3';},2000);
         setTimeout(function(){p.innerHTML = '2';},3000);
         setTimeout(function(){p.innerHTML = '1';},4000);
-        setTimeout(function(){window.location.replace(to);},5000);
+        if(newtab){
+          setTimeout(function(){window.open(to);},5000);
+        } else {
+          setTimeout(function(){window.location.replace(to);},5000);
+        }
       }
     </script>
   </head>
