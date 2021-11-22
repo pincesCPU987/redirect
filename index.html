@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Redirecting to ''...</title>
+    <script>
+      window.onload = function(){
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const to = urlParams.get('to');
+        const from = urlParams.get('from');
+        window.document.title = window.document.title.replace('\'\'','\'' + to + '\'');
+        var h1 = document.getElementById('h1');
+        var p = document.getElementById('p');
+        h1.innerHTML = 'Redirecting to \'' + to + '\'.'
+        p.innerHTML = '5';
+        var a = document.getElementById('a');
+        a.href = from;
+        setTimeout(function(){p.innerHTML = '4';},1000);
+        setTimeout(function(){p.innerHTML = '3';},2000);
+        setTimeout(function(){p.innerHTML = '2';},3000);
+        setTimeout(function(){p.innerHTML = '1';},4000);
+        setTimeout(function(){window.location.replace(to);},5000);
+      }
+    </script>
+  </head>
+  <body>
+    <a id="a">Go back</a>
+    <h1 id="h1">Redirecting to </h1>
+    <p id="p"></p>
+  </body>
+</html>
