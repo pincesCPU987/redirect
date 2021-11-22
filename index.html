@@ -20,7 +20,7 @@
         setTimeout(function(){p.innerHTML = '3';},2000);
         setTimeout(function(){p.innerHTML = '2';},3000);
         setTimeout(function(){p.innerHTML = '1';},4000);
-        if(newtab){
+        if(newtab == 'true'){
           setTimeout(function(){window.open(to);},5000);
           setTimeout(function(){window.location.href(from)},5100);
         } else {
