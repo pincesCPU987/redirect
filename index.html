@@ -8,14 +8,14 @@
         p.innerHTML = text;
       }
       function writeDec(text,time){
-        setInterval(function(){write(text)},time);
-        setInterval(function(){write(text + '.')},time+125);
-        setInterval(function(){write(text + '..')},time+250);
-        setInterval(function(){write(text + '...')},time+375);
-        setInterval(function(){write(text + '....')},time+500);
-        setInterval(function(){write(text + '...')},time+625);
-        setInterval(function(){write(text + '..')},time+750);
-        setInterval(function(){write(text + '.')},time+875);
+        setTimeout(function(){write(text)},time);
+        setTimeout(function(){write(text + '.')},time+125);
+        setTimeout(function(){write(text + '..')},time+250);
+        setTimeout(function(){write(text + '...')},time+375);
+        setTimeout(function(){write(text + '....')},time+500);
+        setTimeout(function(){write(text + '...')},time+625);
+        setTimeout(function(){write(text + '..')},time+750);
+        setTimeout(function(){write(text + '.')},time+875);
       }
       window.onload = function(){
         const queryString = window.location.search;
