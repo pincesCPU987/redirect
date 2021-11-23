@@ -3,6 +3,20 @@
   <head>
     <title>Redirecting to ''...</title>
     <script>
+      function write(text){
+        var p = document.getElementById('p');
+        p.innerHTML = text;
+      }
+      function writeDec(text,time){
+        setInterval(function(){write(text);},time);
+        setInterval(function(){write(text + '.');},time+125);
+        setInterval(function(){write(text + '..');},time+250);
+        setInterval(function(){write(text + '...')},time+375);
+        setInterval(function(){write(text + '....')},time+500);
+        setInterval(function(){write(text + '...')},time+625);
+        setInterval(function(){write(text + '..')},time+750);
+        setInterval(function(){write(text + '.')},time+875);
+      }
       window.onload = function(){
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
@@ -11,15 +25,14 @@
         const newtab = urlParams.get('newtab');
         window.document.title = window.document.title.replace('\'\'','\'' + to + '\'');
         var h1 = document.getElementById('h1');
-        var p = document.getElementById('p');
         h1.innerHTML = 'Redirecting to \'' + to + '\'.'
-        p.innerHTML = '5';
         var a = document.getElementById('a');
         a.href = from;
-        setTimeout(function(){p.innerHTML = '4';},1000);
-        setTimeout(function(){p.innerHTML = '3';},2000);
-        setTimeout(function(){p.innerHTML = '2';},3000);
-        setTimeout(function(){p.innerHTML = '1';},4000);
+        writeDec('5',0);
+        writeDec('4',1000);
+        writeDec('3',2000);
+        writeDec('2',3000);
+        writeDec('1',4000);
         if(newtab == 'true'){
           setTimeout(function(){window.open(to);},5000);
           setTimeout(function(){window.location.replace(from);},6000);
