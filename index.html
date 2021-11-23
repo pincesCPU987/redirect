@@ -8,9 +8,9 @@
         p.innerHTML = text;
       }
       function writeDec(text,time){
-        setInterval(function(){write(text);},time);
-        setInterval(function(){write(text + '.');},time+125);
-        setInterval(function(){write(text + '..');},time+250);
+        setInterval(function(){write(text)},time);
+        setInterval(function(){write(text + '.')},time+125);
+        setInterval(function(){write(text + '..')},time+250);
         setInterval(function(){write(text + '...')},time+375);
         setInterval(function(){write(text + '....')},time+500);
         setInterval(function(){write(text + '...')},time+625);
